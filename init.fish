@@ -10,14 +10,11 @@ end
 
 source $EMACS_VTERM_PATH/etc/emacs-vterm.fish
 
-function find_file
+function find-file
     set -q argv[1]; or set argv[1] "."
     vterm_cmd find-file (realpath "$argv")
 end
 
-alias emacs find_file
-alias e find_file
-
-function say
-    vterm_cmd message "%s" "$argv"
-end
+alias emacs find-file
+alias e find-file
+alias vim find-file
