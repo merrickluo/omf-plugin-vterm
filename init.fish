@@ -4,7 +4,7 @@
 # * $package       package name
 # * $path          package path
 # * $dependencies  package dependencies
-if [ "$INSIDE_EMACS" != 'vterm' ]
+if [ "$INSIDE_EMACS" != vterm ]
     exit 0
 end
 
@@ -13,6 +13,10 @@ source $EMACS_VTERM_PATH/etc/emacs-vterm.fish
 function find-file
     set -q argv[1]; or set argv[1] "."
     vterm_cmd find-file (realpath "$argv")
+end
+
+function magit
+    vterm_cmd magit
 end
 
 alias emacs find-file
